@@ -1,0 +1,2 @@
+GET http://localhost:3001/api/generate/?todo="Learn Todo"
+Content-Type: application/json
