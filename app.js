@@ -1,8 +1,23 @@
 import "dotenv/config";
 import express from "express";
 import Anthropic from "@anthropic-ai/sdk";
+import cors from "cors";
 
 const app = express();
+
+app.use(
+	cors({
+		origin: "*", // Adjust this if you need more restrictive settings
+		methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+		allowedHeaders: [
+			"Content-Type",
+			"Origin",
+			"X-Requested-With",
+			"Accept",
+		],
+	})
+);
+
 app.use(express.json());
 
 app.use((req, res, next) => {
